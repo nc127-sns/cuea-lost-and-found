@@ -1,0 +1,259 @@
+/* CUEA Brand Variables */
+:root {
+  --cuea-maroon: #7a1c1c;
+  --cuea-maroon-dark: #581212;
+  --cuea-gold: #d4a017;
+  --bg-light: #f6f7f9;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #d1d5db;
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding-bottom: 3rem;
+}
+
+/* Container */
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+header {
+  background-color: var(--cuea-maroon);
+  color: #ffffff;
+  border-bottom: 4px solid var(--cuea-gold);
+  padding: 1.25rem 0;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.hd {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(- --cuea-maroon);
+  border: 3px solid var(--cuea-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.uni {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #f3e5ab;
+  font-weight: 600;
+}
+
+header h1 {
+  font-size: 1.65rem;
+  line-height: 1.2;
+  margin: 0.15rem 0;
+}
+
+.motto {
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Pure CSS Tabs */
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.bar {
+  display: flex;
+  gap: 0.5rem;
+  background: #e5e7eb;
+  padding: 0.35rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.bar label {
+  flex: 1;
+  text-align: center;
+  padding: 0.65rem 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 7px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.bar label:hover {
+  color: var(--cuea-maroon);
+}
+
+/* Active Tab Highlighting */
+#t1:checked ~ .bar label[for="t1"],
+#t2:checked ~ .bar label[for="t2"],
+#t3:checked ~ .bar label[for="t3"] {
+  background-color: var(--card-bg);
+  color: var(--cuea-maroon);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide all panels by default, show active panel */
+.panel {
+  display: none;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+#t1:checked ~ .panels .p1,
+#t2:checked ~ .panels .p2,
+#t3:checked ~ .panels .p3 {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Notice Board Section */
+.note {
+  background-color: #fef9c3;
+  border-left: 4px solid var(--cuea-gold);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #713f12;
+}
+
+.board-frame {
+  width: 100%;
+  height: 520px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Forms & Cards */
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card strong {
+  font-size: 1.25rem;
+  color: var(--cuea-maroon);
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 0.5rem;
+}
+
+.card label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.card input,
+.card select,
+.card textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.card input:focus,
+.card select:focus,
+.card textarea:focus {
+  outline: none;
+  border-color: var(--cuea-maroon);
+  box-shadow: 0 0 0 3px rgba(122, 28, 28, 0.15);
+}
+
+/* Submit Button */
+.btn {
+  margin-top: 0.5rem;
+  background-color: var(--cuea-maroon);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: var(--cuea-maroon-dark);
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 540px) {
+  .hd {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .bar label {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.25rem;
+  }
+
+  .card {
+    padding: 1.15rem;
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CUEA Lost &amp; Found</title>
+  <link rel="stylesheet" href="css/Project1.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <img class="logo" alt="CUEA logo" src="logo.jpg">
+    <div>
+      <div class="uni">The Catholic University of Eastern Africa</div>
+      <h1>Lost &amp; Found</h1>
+      <div class="motto">“Consecrate them in the truth”</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap tabs">
+  <input type="radio" name="t" id="t1" checked>
+  <input type="radio" name="t" id="t2">
+  <input type="radio" name="t" id="t3">
+
+  <div class="bar">
+    <label for="t1">🔎 Notice board</label>
+    <label for="t2">I lost</label>
+    <label for="t3">I found</label>
+  </div>
+
+  <div class="panels">
+
+    <!-- NOTICE BOARD: your live Google Sheet -->
+    <section class="panel p1">
+      <p class="note">Reports appear here after they are sent. Refresh the page to see the newest.</p>
+      <iframe class="board-frame" title="Reported items" src="https://docs.google.com/spreadsheets/d/1-ubwZH_PYHLTvGDSNVPRgNit7KiVgQydQhrOmO5med0/gviz/tq?tqx=out:html&gid=78506505"></iframe>
+    </section>
+
+    <!-- LOST FORM -->
+    <section class="panel p2">
+      <form class="card" method="post"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfu8fsPnwb8p0RktBG88gHSftqOa2sJdvHbzlWW21oG8sy__A/formResponse">
+        <strong>Report a lost item</strong>
+        <input type="hidden" name="entry.1116825895" value="LOST">
+        <label>What is it?<input data-field="item" name="entry.354997690" required placeholder="e.g. Black Samsung phone"></label>
+        <label>Category
+          <select name="entry.495253537">
+            <option>Phone / Electronics</option>
+            <option>ID / Cards / Documents</option>
+            <option>Keys</option>
+            <option>Bag / Wallet</option>
+            <option>Books / Stationery</option>
+            <option>Clothing / Umbrella</option>
+            <option>Water bottle / Lunchbox</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Description<textarea name="entry.1531082676" placeholder="Colour, brand, marks…"></textarea></label>
+        <label>Last seen where?<input data-field="place" name="entry.633064507" required placeholder="e.g. Library, Block B"></label>
+        <label>Date<input name="entry.2099426864" type="date" required></label>
+        <label>Your name<input data-field="name" name="entry.1295673448" required></label>
+        <label>Your contact<input data-field="contact" name="entry.485486697" required placeholder="07xx xxx xxx or email"></label>
+        <button class="btn" type="submit">Send report</button>
+      </form>
+    </section>
+
+    <!-- FOUND FORM -->
+    <section class="panel p3">
+      <form class="card" method="post"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfu8fsPnwb8p0RktBG88gHSftqOa2sJdvHbzlWW21oG8sy__A/formResponse">
+        <strong>Report a found item</strong>
+        <input type="hidden" name="entry.1116825895" value="FOUND">
+        <label>What is it?<input data-field="item" name="entry.354997690" required placeholder="e.g. Blue umbrella"></label>
+        <label>Category
+          <select name="entry.495253537">
+            <option>Phone / Electronics</option>
+            <option>ID / Cards / Documents</option>
+            <option>Keys</option>
+            <option>Bag / Wallet</option>
+            <option>Books / Stationery</option>
+            <option>Clothing / Umbrella</option>
+            <option>Water bottle / Lunchbox</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Description<textarea name="entry.1531082676" placeholder="Colour, brand, marks…"></textarea></label>
+        <label>Found where?<input data-field="place" name="entry.633064507" required placeholder="e.g. Library, Block B"></label>
+        <label>Date<input name="entry.2099426864" type="date" required></label>
+        <label>Your name<input data-field="name" name="entry.1295673448" required></label>
+        <label>Your contact<input data-field="contact" name="entry.485486697" required placeholder="07xx xxx xxx or email"></label>
+        <button class="btn" type="submit">Send report</button>
+      </form>
+    </section>
+
+  </div>
+</main>
+
+<script src="JavaScript/script.js"></script>
+</body>
+</html>
